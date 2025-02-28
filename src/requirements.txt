@@ -1,0 +1,16 @@
+flask
+transformers
+torch
+pytorch-lightning
+fairscale
+numba
+einops
+mashumaro
+pandas
+bio
+rdkit
+ihm
+modelcif
+scipy
+google-cloud-storage
+gunicorn
