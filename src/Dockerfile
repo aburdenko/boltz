@@ -6,6 +6,7 @@ WORKDIR /boltz
 RUN apt-get update && apt-get install -y --no-install-recommends gcc libc6-dev 
 
 COPY requirements.txt .
+COPY deployment.yaml .
 
 
 RUN pip install --upgrade pip
@@ -16,12 +17,12 @@ COPY ./boltz /boltz
 # COPY the cache directory.
 RUN mkdir -p /boltz/cache
 # COPY the processed directory.
-RUN mkdir -p /boltz/processed
+#RUN mkdir -p /boltz/processed
 
 ENV PYTHONPATH=/
 
-EXPOSE 8080
+EXPOSE 8090
 
 #CMD ["python", "app.py"]
 
-CMD ["gunicorn", "--bind", "0.0.0.0:8080", "app:app", "--workers", "3"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8090", "app:app", "--workers", "3"]

@@ -14,3 +14,4 @@ modelcif
 scipy
 google-cloud-storage
 gunicorn
+omegaconf
